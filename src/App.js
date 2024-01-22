@@ -1,8 +1,7 @@
-import logo from "./logo.svg";
 import "./App.css";
-
+import { HomePage } from "./view/pages";
 function App() {
-  return <h1>Form Filler</h1>;
+  return <HomePage />;
 }
 
 export default App;
