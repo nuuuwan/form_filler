@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { CircularProgress } from "@mui/material";   
+import { CircularProgress } from "@mui/material";
 import { Form } from "../../nonview/core";
 import { FormView } from "../molecules";
 
@@ -11,18 +11,18 @@ export default class HomePage extends Component {
   }
 
   async componentDidMount() {
-    const pdfjs = await import('pdfjs-dist/build/pdf');
-const pdfjsWorker = await import('pdfjs-dist/build/pdf.worker.entry');
+    const pdfjs = await import("pdfjs-dist/build/pdf");
+    const pdfjsWorker = await import("pdfjs-dist/build/pdf.worker.entry");
 
-pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
+    pdfjs.GlobalWorkerOptions.workerSrc = pdfjsWorker;
 
     this.setState({ isLoaded: true });
   }
 
   render() {
-    const {activeForm, isLoaded} = this.state;
+    const { activeForm, isLoaded } = this.state;
     if (!isLoaded) {
-        return <CircularProgress />;
+      return <CircularProgress />;
     }
     return <FormView form={activeForm} />;
   }
